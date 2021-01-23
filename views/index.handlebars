@@ -1,0 +1,24 @@
+<!-- ./view/index.handlebars -->
+<div class="title text-center m-5">
+  <h1>你想對誰說幹話？</h1>
+</div>
+<div class="container">
+  <form method="post" action="/">
+    <div class="row option-record" data-record="{{checkedItem}}">
+      {{#each targets}}
+      <div class="col-sm text-center d-flex flex-column">
+        <img src="{{this.img}}" alt="{{this.eng}}" class="rounded img-thumbnail" style="height: 14rem">
+        <div class="mt-2"><input type="radio" name="jobs" value="{{this.eng}}">
+          <scan class="ml-2" style="font-size:1.2rem;">{{this.chi}}</scan>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="generator w-100 d-flex justify-content-center m-3">
+      <button type="submit" class="btn btn-dark mr-3 p-3 trash-talk-generate-btn"
+        style="font-size:1.2rem;">產生幹話</button>
+      <textarea placeholder=" ⋯⋯ " id="generate" class="p-1" style="font-size:1.5rem; width:25rem;"
+        readonly>{{#if sentance}}{{sentance}}{{/if}}</textarea>
+    </div>
+  </form>
+</div>
